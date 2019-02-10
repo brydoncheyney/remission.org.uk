@@ -1,0 +1,9 @@
+- name: configure postfix
+  template:
+    src: main.cf
+    dest: /etc/postfix/main.cf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+  - reload postfix

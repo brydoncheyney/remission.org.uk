@@ -1,0 +1,5 @@
+- name: install postfix
+  package:
+    name: 'postfix-{{ postfix_version }}'
+    state: present
+

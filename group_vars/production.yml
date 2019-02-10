@@ -1,0 +1,15 @@
+postfix_domain: remission.org.uk
+postfix_mydomain: '{{ postfix_domain }}'
+postfix_myorigin: '{{ postfix_domain }}'
+postfix_inet_interfaces: all
+postfix_mydestinations:
+- '{{ postfix_domain }}'
+- cheyney.me.uk
+postfix_relay_domains:
+- '{{ postfix_domain }}'
+- cheyney.me.uk
+
+postfix_use_tls: yes
+postfix_tls_key_file: /etc/ssl/certs/remission.org.uk.key
+postfix_tls_cert_file: /etc/ssl/certs/remission.org.uk.crt
+postfix_tls_cafile: /etc/ssl/certs/remission.org.uk.pem
