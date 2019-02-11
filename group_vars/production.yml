@@ -13,3 +13,5 @@ postfix_use_tls: yes
 postfix_tls_key_file: /etc/ssl/certs/remission.org.uk.key
 postfix_tls_cert_file: /etc/ssl/certs/remission.org.uk.crt
 postfix_tls_cafile: /etc/ssl/certs/remission.org.uk.pem
+
+ansible_public_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG1nJHv/D+EjuR9rcwjO1DnekV36rclTSAi5v5VCUODm ansible@remission.org.uk
