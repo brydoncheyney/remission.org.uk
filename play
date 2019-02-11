@@ -34,7 +34,7 @@ cat > local <<INVENTORY
 ${ip}
 INVENTORY
 
-ansible-playbook --inventory local \
+ansible-playbook --inventory inventories/local \
                  --user vagrant \
                  --private-key ~/.vagrant.d/insecure_private_key \
                  ${playbook} \
