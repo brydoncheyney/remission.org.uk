@@ -1,11 +1,41 @@
 #!/usr/bin/env bash
 
-set +x
+set +ex
 
-sudo lxc-ls -f | awk '/remissionorguk/ {print $5}' 2>/dev/null > local
+function usage() {
+  echo "$(basename $0) (-p playbook)"
+  exit 0;
+}
+
+while getopts hp: option; do
+  case ${option} in
+    h)
+      usage
+      ;;
+    p)
+      playbook=${OPTARG}
+      [ -e ${playbook} ] || {
+        echo "${playbook} does not exist!";
+        exit 1;
+      }
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      ;;
+  esac
+done
+
+shift $((OPTIND-1))
+
+ip=$(sudo lxc-ls -f | awk '/remissionorguk/ {print $5}' 2>/dev/null)
+
+cat > local <<INVENTORY
+[local]
+${ip}
+INVENTORY
 
 ansible-playbook --inventory local \
                  --user vagrant \
                  --private-key ~/.vagrant.d/insecure_private_key \
-                 playbook.yml \
+                 ${playbook} \
                  "$@"
