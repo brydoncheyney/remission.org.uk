@@ -19,3 +19,5 @@
     key: '{{ ansible_public_key }}'
     exclusive: yes
     state: present
+  when:
+  - not ansible_check_mode
