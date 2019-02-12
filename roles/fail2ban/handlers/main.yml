@@ -1,0 +1,9 @@
+- name: restart fail2ban
+  service:
+    name: fail2ban
+    state: restart
+
+- name: reload fail2ban
+  service:
+    name: fail2ban
+    state: reloaded

@@ -1,0 +1,5 @@
+- name: ensure fail2ban service is started and enabled on boot
+  service:
+    name: fail2ban
+    state: started
+    enabled: yes

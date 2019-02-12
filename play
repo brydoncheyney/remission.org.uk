@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-set +ex
+set +x
 
 function usage() {
   echo "$(basename $0) (-p playbook)"
   exit 0;
 }
+
+playbook=playbook.yml
 
 while getopts hp: option; do
   case ${option} in

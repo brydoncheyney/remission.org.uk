@@ -2,4 +2,14 @@
   become: yes
   tasks:
   - import_role:
+      name: fail2ban
+    tags:
+    - fail2ban
+  - import_role:
+      name: git
+    tags:
+    - git
+  - import_role:
       name: postfix
+    tags:
+    - postfix

@@ -1,0 +1,10 @@
+- name: install epel
+  package:
+    name: epel-release
+    state: present
+
+- name: install fail2ban
+  package:
+    name: 'fail2ban-{{ fail2ban_version }}'
+    state: present
+
