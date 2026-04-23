@@ -43,7 +43,7 @@ body {
 }
 
 .cover-container {
-  max-width: 42em;
+  max-width: 56em;
 }
 
 
@@ -81,11 +81,10 @@ body {
 }
 
 @media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
+  .masthead .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
